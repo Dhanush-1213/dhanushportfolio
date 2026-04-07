@@ -1,0 +1,195 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#080a10"/>
+      <stop offset="100%" stop-color="#0a0c16"/>
+    </linearGradient>
+    <linearGradient id="armGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <filter id="laserGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)"/>
+  
+  <g opacity="0.04" stroke="#818cf8" stroke-width="0.5">
+    <line x1="0" y1="62" x2="800" y2="62"/><line x1="0" y1="124" x2="800" y2="124"/>
+    <line x1="0" y1="186" x2="800" y2="186"/><line x1="0" y1="248" x2="800" y2="248"/>
+    <line x1="0" y1="310" x2="800" y2="310"/><line x1="0" y1="372" x2="800" y2="372"/>
+    <line x1="0" y1="434" x2="800" y2="434"/>
+    <line x1="80" y1="0" x2="80" y2="500"/><line x1="160" y1="0" x2="160" y2="500"/>
+    <line x1="240" y1="0" x2="240" y2="500"/><line x1="320" y1="0" x2="320" y2="500"/>
+    <line x1="400" y1="0" x2="400" y2="500"/><line x1="480" y1="0" x2="480" y2="500"/>
+    <line x1="560" y1="0" x2="560" y2="500"/><line x1="640" y1="0" x2="640" y2="500"/>
+    <line x1="720" y1="0" x2="720" y2="500"/>
+  </g>
+
+  <!-- Webots simulation panel -->
+  <rect x="40" y="40" width="380" height="300" rx="12" fill="#080a14" stroke="#1a1d3a" stroke-width="1.5"/>
+  
+  <!-- Sim header bar -->
+  <rect x="40" y="40" width="380" height="30" rx="12" fill="#0d0f24"/>
+  <rect x="40" y="58" width="380" height="12" fill="#0d0f24"/>
+  <circle cx="58" cy="55" r="5" fill="#ef4444" opacity="0.7"/>
+  <circle cx="74" cy="55" r="5" fill="#f59e0b" opacity="0.7"/>
+  <circle cx="90" cy="55" r="5" fill="#22c55e" opacity="0.7"/>
+  <text x="200" y="60" fill="#475569" font-size="10" text-anchor="middle" font-weight="600">Webots Simulation — UR5e Arm</text>
+
+  <!-- Conveyor belt floor -->
+  <rect x="60" y="270" width="340" height="40" rx="4" fill="#0f1128"/>
+  <g stroke="#1a1d3a" stroke-width="1">
+    <line x1="80" y1="270" x2="80" y2="310"/>
+    <line x1="110" y1="270" x2="110" y2="310"/>
+    <line x1="140" y1="270" x2="140" y2="310"/>
+    <line x1="170" y1="270" x2="170" y2="310"/>
+    <line x1="200" y1="270" x2="200" y2="310"/>
+    <line x1="230" y1="270" x2="230" y2="310"/>
+    <line x1="260" y1="270" x2="260" y2="310"/>
+    <line x1="290" y1="270" x2="290" y2="310"/>
+    <line x1="320" y1="270" x2="320" y2="310"/>
+    <line x1="350" y1="270" x2="350" y2="310"/>
+    <line x1="380" y1="270" x2="380" y2="310"/>
+  </g>
+  <!-- Conveyor belt arrows -->
+  <text x="200" y="293" fill="#2d3556" font-size="20" text-anchor="middle" font-weight="900">→ → → →</text>
+
+  <!-- Robot base -->
+  <rect x="190" y="245" width="40" height="30" rx="3" fill="#1a1d3a"/>
+  <rect x="195" y="238" width="30" height="12" rx="2" fill="#1e2248"/>
+
+  <!-- Robot arm segments -->
+  <!-- Lower arm -->
+  <rect x="204" y="175" width="12" height="68" rx="4" fill="url(#armGrad)" opacity="0.9"/>
+  <!-- Elbow joint -->
+  <circle cx="210" cy="175" r="9" fill="#2d3556" stroke="#3b4a8a" stroke-width="2"/>
+  <!-- Upper arm -->
+  <rect x="204" y="110" width="12" height="68" rx="4" fill="url(#armGrad)" opacity="0.8" transform="rotate(-20 210 175)"/>
+  <!-- Shoulder joint -->
+  <circle cx="210" cy="175" r="7" fill="#3b4a8a"/>
+  <!-- Wrist -->
+  <circle cx="248" cy="122" r="7" fill="#2d3556" stroke="#3b4a8a" stroke-width="2"/>
+  <!-- End effector / gripper -->
+  <path d="M 248 105 L 240 122 L 256 122 Z" fill="#1e2248" stroke="#60a5fa" stroke-width="1.5"/>
+  
+  <!-- Laser beam from gripper -->
+  <line x1="248" y1="115" x2="248" y2="260" stroke="#ef4444" stroke-width="1.5" opacity="0.6" filter="url(#laserGlow)" stroke-dasharray="3,3"/>
+  
+  <!-- Target box on belt -->
+  <rect x="234" y="248" width="28" height="20" rx="3" fill="#b45309" stroke="#f59e0b" stroke-width="1"/>
+  <text x="248" y="262" fill="#fde68a" font-size="8" text-anchor="middle" font-weight="700">BOX</text>
+
+  <!-- Color detection box labels -->
+  <rect x="80" y="248" width="28" height="20" rx="3" fill="#ef4444" opacity="0.8"/>
+  <text x="94" y="262" fill="white" font-size="7" text-anchor="middle" font-weight="700">RED</text>
+  
+  <rect x="130" y="248" width="28" height="20" rx="3" fill="#22c55e" opacity="0.8"/>
+  <text x="144" y="262" fill="white" font-size="7" text-anchor="middle" font-weight="700">GRN</text>
+  
+  <rect x="310" y="248" width="28" height="20" rx="3" fill="#3b82f6" opacity="0.8"/>
+  <text x="324" y="262" fill="white" font-size="7" text-anchor="middle" font-weight="700">BLU</text>
+  
+  <rect x="360" y="248" width="28" height="20" rx="3" fill="#a855f7" opacity="0.8"/>
+  <text x="374" y="262" fill="white" font-size="7" text-anchor="middle" font-weight="700">PRP</text>
+
+  <!-- Sorting bins at bottom -->
+  <rect x="60" y="318" width="70" height="38" rx="4" fill="#1a0d0d" stroke="#ef4444" stroke-width="1" opacity="0.8"/>
+  <text x="95" y="341" fill="#f87171" font-size="9" text-anchor="middle" font-weight="700">BIN A</text>
+  <text x="95" y="352" fill="#475569" font-size="8" text-anchor="middle">RED</text>
+
+  <rect x="148" y="318" width="70" height="38" rx="4" fill="#0a1a0d" stroke="#22c55e" stroke-width="1" opacity="0.8"/>
+  <text x="183" y="341" fill="#4ade80" font-size="9" text-anchor="middle" font-weight="700">BIN B</text>
+  <text x="183" y="352" fill="#475569" font-size="8" text-anchor="middle">GREEN</text>
+
+  <rect x="236" y="318" width="70" height="38" rx="4" fill="#0a0d1a" stroke="#3b82f6" stroke-width="1" opacity="0.8"/>
+  <text x="271" y="341" fill="#60a5fa" font-size="9" text-anchor="middle" font-weight="700">BIN C</text>
+  <text x="271" y="352" fill="#475569" font-size="8" text-anchor="middle">BLUE</text>
+
+  <rect x="324" y="318" width="70" height="38" rx="4" fill="#130a1a" stroke="#a855f7" stroke-width="1" opacity="0.8"/>
+  <text x="359" y="341" fill="#c084fc" font-size="9" text-anchor="middle" font-weight="700">BIN D</text>
+  <text x="359" y="352" fill="#475569" font-size="8" text-anchor="middle">PURPLE</text>
+
+  <!-- Sim label -->
+  <text x="60" y="92" fill="#475569" font-size="9" font-weight="600">REAL-TIME SIMULATION VIEW</text>
+
+  <!-- Joint angles display -->
+  <text x="80" y="115" fill="#64748b" font-size="9">J1: 45.2°</text>
+  <text x="140" y="115" fill="#64748b" font-size="9">J2: -32.1°</text>
+  <text x="210" y="115" fill="#64748b" font-size="9">J3: 18.7°</text>
+  <text x="285" y="115" fill="#64748b" font-size="9">J4: 90.0°</text>
+
+  <!-- Right panel: kinematics + detection -->
+  <rect x="436" y="40" width="324" height="148" rx="12" fill="#080a14" stroke="#1a1d3a" stroke-width="1"/>
+  <text x="456" y="66" fill="#94a3b8" font-size="10" font-weight="600" letter-spacing="1">KINEMATICS STATUS</text>
+
+  <!-- Joint positions mini display -->
+  <text x="456" y="92" fill="#64748b" font-size="10">End Effector Pos</text>
+  <text x="640" y="92" fill="#e2e8f0" font-size="10" font-weight="600">X: 248  Y: 115</text>
+
+  <text x="456" y="112" fill="#64748b" font-size="10">Arm Reach</text>
+  <rect x="560" y="101" width="120" height="10" rx="5" fill="#1a1d3a"/>
+  <rect x="560" y="101" width="88" height="10" rx="5" fill="#818cf8"/>
+  <text x="686" y="111" fill="#c4b5fd" font-size="10">73%</text>
+
+  <text x="456" y="132" fill="#64748b" font-size="10">Velocity</text>
+  <text x="640" y="132" fill="#e2e8f0" font-size="10" font-weight="600">0.24 m/s</text>
+
+  <text x="456" y="152" fill="#64748b" font-size="10">State</text>
+  <rect x="560" y="139" width="76" height="18" rx="5" fill="#052e16"/>
+  <text x="572" y="152" fill="#22c55e" font-size="10" font-weight="700">SORTING</text>
+
+  <!-- Color detection panel -->
+  <rect x="436" y="204" width="324" height="136" rx="12" fill="#080a14" stroke="#1a1d3a" stroke-width="1"/>
+  <text x="456" y="230" fill="#94a3b8" font-size="10" font-weight="600" letter-spacing="1">OBJECT DETECTION</text>
+
+  <!-- Detected color swatch + data -->
+  <rect x="456" y="240" width="36" height="36" rx="6" fill="#f59e0b" stroke="#fcd34d" stroke-width="1.5"/>
+  <text x="502" y="257" fill="#e2e8f0" font-size="12" font-weight="700">ORANGE BOX</text>
+  <text x="502" y="272" fill="#64748b" font-size="10">HSV: (22, 0.87, 0.95)</text>
+
+  <text x="456" y="298" fill="#64748b" font-size="9" font-weight="600">SORTED TODAY</text>
+  <g>
+    <circle cx="476" cy="318" r="8" fill="#ef4444" opacity="0.8"/>
+    <text x="490" y="322" fill="#94a3b8" font-size="10">Red: 42</text>
+    <circle cx="556" cy="318" r="8" fill="#22c55e" opacity="0.8"/>
+    <text x="570" y="322" fill="#94a3b8" font-size="10">Green: 38</text>
+    <circle cx="636" cy="318" r="8" fill="#3b82f6" opacity="0.8"/>
+    <text x="650" y="322" fill="#94a3b8" font-size="10">Blue: 29</text>
+  </g>
+
+  <!-- Stats panel -->
+  <rect x="436" y="356" width="324" height="84" rx="12" fill="#080a14" stroke="#1a1d3a" stroke-width="1"/>
+  <text x="456" y="380" fill="#e2e8f0" font-size="12" font-weight="700">Simulation Stats</text>
+
+  <text x="456" y="404" fill="#64748b" font-size="10">Detection Accuracy</text>
+  <rect x="580" y="393" width="120" height="10" rx="5" fill="#1a1d3a"/>
+  <rect x="580" y="393" width="115" height="10" rx="5" fill="#818cf8"/>
+  <text x="706" y="403" fill="#c4b5fd" font-size="10" font-weight="700">95.8%</text>
+
+  <text x="456" y="424" fill="#64748b" font-size="10">Cycle Time</text>
+  <text x="706" y="424" fill="#e2e8f0" font-size="10" font-weight="600" text-anchor="end">3.2 sec/box</text>
+
+  <!-- Bottom bar -->
+  <rect x="40" y="356" width="380" height="106" rx="10" fill="#080a14" stroke="#1a1d3a" stroke-width="1"/>
+  <text x="60" y="380" fill="#e2e8f0" font-size="12" font-weight="700">Autonomous Sorting Simulation</text>
+
+  <g>
+    <rect x="60" y="392" width="62" height="20" rx="5" fill="#0d0f24" stroke="#1a1d3a"/>
+    <text x="68" y="406" fill="#c4b5fd" font-size="9" font-weight="600">Webots</text>
+    <rect x="130" y="392" width="80" height="20" rx="5" fill="#0d0f24" stroke="#1a1d3a"/>
+    <text x="138" y="406" fill="#c4b5fd" font-size="9" font-weight="600">Kinematics</text>
+    <rect x="218" y="392" width="110" height="20" rx="5" fill="#0d0f24" stroke="#1a1d3a"/>
+    <text x="226" y="406" fill="#c4b5fd" font-size="9" font-weight="600">Object Recognition</text>
+  </g>
+
+  <text x="60" y="436" fill="#64748b" font-size="10">UR5e 6-DOF arm · Color-based object detection</text>
+  <text x="60" y="452" fill="#64748b" font-size="10">Autonomous pick-and-place · 4 sorting bins</text>
+</svg>

@@ -1,0 +1,198 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0f1a"/>
+      <stop offset="100%" stop-color="#0d1220"/>
+    </linearGradient>
+    <linearGradient id="barGrad" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <linearGradient id="barGrad2" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)"/>
+  
+  <!-- Subtle grid -->
+  <g opacity="0.03" stroke="#60a5fa" stroke-width="0.5">
+    <line x1="0" y1="62" x2="800" y2="62"/><line x1="0" y1="124" x2="800" y2="124"/>
+    <line x1="0" y1="186" x2="800" y2="186"/><line x1="0" y1="248" x2="800" y2="248"/>
+    <line x1="0" y1="310" x2="800" y2="310"/><line x1="0" y1="372" x2="800" y2="372"/>
+    <line x1="0" y1="434" x2="800" y2="434"/>
+    <line x1="80" y1="0" x2="80" y2="500"/><line x1="160" y1="0" x2="160" y2="500"/>
+    <line x1="240" y1="0" x2="240" y2="500"/><line x1="320" y1="0" x2="320" y2="500"/>
+    <line x1="400" y1="0" x2="400" y2="500"/><line x1="480" y1="0" x2="480" y2="500"/>
+    <line x1="560" y1="0" x2="560" y2="500"/><line x1="640" y1="0" x2="640" y2="500"/>
+    <line x1="720" y1="0" x2="720" y2="500"/>
+  </g>
+
+  <!-- Top stats strip -->
+  <rect x="40" y="40" width="720" height="70" rx="10" fill="#0c1626" stroke="#1a2d4e" stroke-width="1"/>
+
+  <!-- Stat 1 -->
+  <text x="72" y="68" fill="#64748b" font-size="10" font-weight="600" letter-spacing="1">TOTAL ORDERS</text>
+  <text x="72" y="92" fill="#f1f5f9" font-size="22" font-weight="700">3,842</text>
+  <text x="150" y="92" fill="#22c55e" font-size="11">↑ 12%</text>
+
+  <!-- Divider -->
+  <rect x="220" y="55" width="1" height="40" fill="#1a2d4e"/>
+
+  <!-- Stat 2 -->
+  <text x="240" y="68" fill="#64748b" font-size="10" font-weight="600" letter-spacing="1">IN TRANSIT</text>
+  <text x="240" y="92" fill="#f1f5f9" font-size="22" font-weight="700">247</text>
+  <text x="296" y="92" fill="#f59e0b" font-size="11">↑ 5%</text>
+
+  <!-- Divider -->
+  <rect x="386" y="55" width="1" height="40" fill="#1a2d4e"/>
+
+  <!-- Stat 3 -->
+  <text x="406" y="68" fill="#64748b" font-size="10" font-weight="600" letter-spacing="1">INVENTORY</text>
+  <text x="406" y="92" fill="#f1f5f9" font-size="22" font-weight="700">12,580</text>
+  <text x="502" y="92" fill="#22c55e" font-size="11">↑ 3%</text>
+
+  <!-- Divider -->
+  <rect x="554" y="55" width="1" height="40" fill="#1a2d4e"/>
+
+  <!-- Stat 4 -->
+  <text x="574" y="68" fill="#64748b" font-size="10" font-weight="600" letter-spacing="1">DELIVERED</text>
+  <text x="574" y="92" fill="#f1f5f9" font-size="22" font-weight="700">3,595</text>
+  <text x="650" y="92" fill="#22c55e" font-size="11">99.4%</text>
+
+  <!-- Bar chart panel -->
+  <rect x="40" y="126" width="380" height="210" rx="10" fill="#0c1626" stroke="#1a2d4e" stroke-width="1"/>
+  <text x="60" y="152" fill="#e2e8f0" font-size="12" font-weight="700">Order Volume · Last 7 Days</text>
+
+  <!-- Chart bars -->
+  <g>
+    <!-- Day labels -->
+    <text x="75" y="315" fill="#475569" font-size="9" text-anchor="middle">Mon</text>
+    <text x="120" y="315" fill="#475569" font-size="9" text-anchor="middle">Tue</text>
+    <text x="165" y="315" fill="#475569" font-size="9" text-anchor="middle">Wed</text>
+    <text x="210" y="315" fill="#475569" font-size="9" text-anchor="middle">Thu</text>
+    <text x="255" y="315" fill="#475569" font-size="9" text-anchor="middle">Fri</text>
+    <text x="300" y="315" fill="#475569" font-size="9" text-anchor="middle">Sat</text>
+    <text x="345" y="315" fill="#475569" font-size="9" text-anchor="middle">Sun</text>
+    
+    <!-- Bars set 1 (orders) -->
+    <rect x="62" y="235" width="16" height="75" rx="3" fill="url(#barGrad)" opacity="0.85"/>
+    <rect x="107" y="210" width="16" height="100" rx="3" fill="url(#barGrad)" opacity="0.85"/>
+    <rect x="152" y="195" width="16" height="115" rx="3" fill="url(#barGrad)" opacity="0.85"/>
+    <rect x="197" y="220" width="16" height="90" rx="3" fill="url(#barGrad)" opacity="0.85"/>
+    <rect x="242" y="200" width="16" height="110" rx="3" fill="url(#barGrad)" opacity="0.85"/>
+    <rect x="287" y="240" width="16" height="70" rx="3" fill="url(#barGrad)" opacity="0.85"/>
+    <rect x="332" y="180" width="16" height="130" rx="3" fill="#60a5fa" opacity="1" filter="url(#glow)"/>
+    
+    <!-- Bars set 2 (shipments) -->
+    <rect x="80" y="255" width="16" height="55" rx="3" fill="url(#barGrad2)" opacity="0.7"/>
+    <rect x="125" y="240" width="16" height="70" rx="3" fill="url(#barGrad2)" opacity="0.7"/>
+    <rect x="170" y="230" width="16" height="80" rx="3" fill="url(#barGrad2)" opacity="0.7"/>
+    <rect x="215" y="248" width="16" height="62" rx="3" fill="url(#barGrad2)" opacity="0.7"/>
+    <rect x="260" y="235" width="16" height="75" rx="3" fill="url(#barGrad2)" opacity="0.7"/>
+    <rect x="305" y="260" width="16" height="50" rx="3" fill="url(#barGrad2)" opacity="0.7"/>
+    <rect x="350" y="215" width="16" height="95" rx="3" fill="#818cf8" opacity="0.9"/>
+  </g>
+
+  <!-- Legend -->
+  <rect x="60" y="160" width="10" height="10" rx="2" fill="#38bdf8"/>
+  <text x="74" y="169" fill="#94a3b8" font-size="9">Orders</text>
+  <rect x="120" y="160" width="10" height="10" rx="2" fill="#818cf8"/>
+  <text x="134" y="169" fill="#94a3b8" font-size="9">Shipments</text>
+
+  <!-- Order table panel -->
+  <rect x="436" y="126" width="324" height="210" rx="10" fill="#0c1626" stroke="#1a2d4e" stroke-width="1"/>
+  <text x="456" y="152" fill="#e2e8f0" font-size="12" font-weight="700">Recent Orders</text>
+
+  <!-- Table header -->
+  <rect x="436" y="160" width="324" height="24" fill="#0a1220"/>
+  <text x="456" y="176" fill="#475569" font-size="9" font-weight="700" letter-spacing="0.5">ORDER ID</text>
+  <text x="556" y="176" fill="#475569" font-size="9" font-weight="700" letter-spacing="0.5">ITEM</text>
+  <text x="660" y="176" fill="#475569" font-size="9" font-weight="700" letter-spacing="0.5">QTY</text>
+  <text x="706" y="176" fill="#475569" font-size="9" font-weight="700" letter-spacing="0.5">STATUS</text>
+
+  <!-- Table rows -->
+  <g>
+    <rect x="436" y="184" width="324" height="30" fill="#0c1626"/>
+    <text x="456" y="203" fill="#94a3b8" font-size="10">#ORD-5821</text>
+    <text x="556" y="203" fill="#e2e8f0" font-size="10">Gear Set</text>
+    <text x="660" y="203" fill="#e2e8f0" font-size="10">120</text>
+    <rect x="700" y="191" width="50" height="16" rx="4" fill="#052e16"/>
+    <text x="709" y="203" fill="#22c55e" font-size="9" font-weight="600">Shipped</text>
+
+    <rect x="436" y="214" width="324" height="30" fill="#080f1c"/>
+    <text x="456" y="233" fill="#94a3b8" font-size="10">#ORD-5820</text>
+    <text x="556" y="233" fill="#e2e8f0" font-size="10">Motor V2</text>
+    <text x="660" y="233" fill="#e2e8f0" font-size="10">45</text>
+    <rect x="700" y="221" width="52" height="16" rx="4" fill="#1c1104"/>
+    <text x="706" y="233" fill="#f59e0b" font-size="9" font-weight="600">In Transit</text>
+
+    <rect x="436" y="244" width="324" height="30" fill="#0c1626"/>
+    <text x="456" y="263" fill="#94a3b8" font-size="10">#ORD-5819</text>
+    <text x="556" y="263" fill="#e2e8f0" font-size="10">Sensor X4</text>
+    <text x="660" y="263" fill="#e2e8f0" font-size="10">300</text>
+    <rect x="700" y="251" width="50" height="16" rx="4" fill="#0f172a"/>
+    <text x="706" y="263" fill="#818cf8" font-size="9" font-weight="600">Processing</text>
+
+    <rect x="436" y="274" width="324" height="30" fill="#080f1c"/>
+    <text x="456" y="293" fill="#94a3b8" font-size="10">#ORD-5818</text>
+    <text x="556" y="293" fill="#e2e8f0" font-size="10">Cable Asm</text>
+    <text x="660" y="293" fill="#e2e8f0" font-size="10">88</text>
+    <rect x="700" y="281" width="50" height="16" rx="4" fill="#052e16"/>
+    <text x="709" y="293" fill="#22c55e" font-size="9" font-weight="600">Shipped</text>
+
+    <rect x="436" y="304" width="324" height="30" fill="#0c1626"/>
+    <text x="456" y="323" fill="#94a3b8" font-size="10">#ORD-5817</text>
+    <text x="556" y="323" fill="#e2e8f0" font-size="10">PCB Unit</text>
+    <text x="660" y="323" fill="#e2e8f0" font-size="10">210</text>
+    <rect x="700" y="311" width="50" height="16" rx="4" fill="#052e16"/>
+    <text x="709" y="323" fill="#22c55e" font-size="9" font-weight="600">Shipped</text>
+  </g>
+
+  <!-- Bottom: inventory progress bars -->
+  <rect x="40" y="352" width="720" height="90" rx="10" fill="#0c1626" stroke="#1a2d4e" stroke-width="1"/>
+  <text x="60" y="377" fill="#e2e8f0" font-size="12" font-weight="700">Inventory Levels</text>
+
+  <!-- Inventory bars -->
+  <text x="60" y="400" fill="#64748b" font-size="10">Warehouse A</text>
+  <rect x="160" y="389" width="200" height="10" rx="5" fill="#1a2d4e"/>
+  <rect x="160" y="389" width="162" height="10" rx="5" fill="#38bdf8"/>
+  <text x="368" y="400" fill="#94a3b8" font-size="10">81%</text>
+
+  <text x="60" y="422" fill="#64748b" font-size="10">Warehouse B</text>
+  <rect x="160" y="411" width="200" height="10" rx="5" fill="#1a2d4e"/>
+  <rect x="160" y="411" width="118" height="10" rx="5" fill="#818cf8"/>
+  <text x="368" y="422" fill="#94a3b8" font-size="10">59%</text>
+
+  <text x="450" y="400" fill="#64748b" font-size="10">Warehouse C</text>
+  <rect x="550" y="389" width="180" height="10" rx="5" fill="#1a2d4e"/>
+  <rect x="550" y="389" width="153" height="10" rx="5" fill="#22c55e"/>
+  <text x="738" y="400" fill="#94a3b8" font-size="10">85%</text>
+
+  <text x="450" y="422" fill="#64748b" font-size="10">Cold Storage</text>
+  <rect x="550" y="411" width="180" height="10" rx="5" fill="#1a2d4e"/>
+  <rect x="550" y="411" width="63" height="10" rx="5" fill="#f59e0b"/>
+  <text x="738" y="422" fill="#94a3b8" font-size="10">35%</text>
+
+  <!-- Tech badges -->
+  <g>
+    <rect x="40" y="456" width="72" height="24" rx="6" fill="#0f2035" stroke="#1e3a6e"/>
+    <text x="50" y="472" fill="#93c5fd" font-size="10" font-weight="600">Node.js</text>
+    <rect x="120" y="456" width="70" height="24" rx="6" fill="#0f2035" stroke="#1e3a6e"/>
+    <text x="130" y="472" fill="#93c5fd" font-size="10" font-weight="600">Express</text>
+    <rect x="198" y="456" width="64" height="24" rx="6" fill="#0f2035" stroke="#1e3a6e"/>
+    <text x="208" y="472" fill="#93c5fd" font-size="10" font-weight="600">MySQL</text>
+    <rect x="270" y="456" width="58" height="24" rx="6" fill="#0f2035" stroke="#1e3a6e"/>
+    <text x="280" y="472" fill="#93c5fd" font-size="10" font-weight="600">React</text>
+    <rect x="336" y="456" width="44" height="24" rx="6" fill="#0f2035" stroke="#1e3a6e"/>
+    <text x="346" y="472" fill="#93c5fd" font-size="10" font-weight="600">JWT</text>
+  </g>
+
+  <text x="430" y="472" fill="#f1f5f9" font-size="18" font-weight="700">Supply Chain Management</text>
+</svg>

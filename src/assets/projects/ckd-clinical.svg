@@ -1,0 +1,197 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#08090f"/>
+      <stop offset="100%" stop-color="#0c0e1a"/>
+    </linearGradient>
+    <linearGradient id="riskHigh" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#f97316"/>
+    </linearGradient>
+    <linearGradient id="riskLow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#4ade80"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)"/>
+  
+  <g opacity="0.03" stroke="#60a5fa" stroke-width="0.5">
+    <line x1="0" y1="62" x2="800" y2="62"/><line x1="0" y1="124" x2="800" y2="124"/>
+    <line x1="0" y1="186" x2="800" y2="186"/><line x1="0" y1="248" x2="800" y2="248"/>
+    <line x1="0" y1="310" x2="800" y2="310"/><line x1="0" y1="372" x2="800" y2="372"/>
+    <line x1="0" y1="434" x2="800" y2="434"/>
+    <line x1="80" y1="0" x2="80" y2="500"/><line x1="160" y1="0" x2="160" y2="500"/>
+    <line x1="240" y1="0" x2="240" y2="500"/><line x1="320" y1="0" x2="320" y2="500"/>
+    <line x1="400" y1="0" x2="400" y2="500"/><line x1="480" y1="0" x2="480" y2="500"/>
+    <line x1="560" y1="0" x2="560" y2="500"/><line x1="640" y1="0" x2="640" y2="500"/>
+    <line x1="720" y1="0" x2="720" y2="500"/>
+  </g>
+
+  <!-- Patient info panel -->
+  <rect x="40" y="40" width="240" height="290" rx="12" fill="#0a0c18" stroke="#1a1f3a" stroke-width="1"/>
+  <rect x="40" y="40" width="240" height="38" rx="12" fill="#0e1128"/>
+  <rect x="40" y="66" width="240" height="12" fill="#0e1128"/>
+  <text x="60" y="64" fill="#93c5fd" font-size="11" font-weight="700">Patient Profile</text>
+
+  <!-- Avatar placeholder -->
+  <circle cx="100" cy="115" r="28" fill="#1a1f3a"/>
+  <circle cx="100" cy="108" r="12" fill="#2d3556"/>
+  <ellipse cx="100" cy="135" rx="20" ry="10" fill="#2d3556"/>
+
+  <text x="138" y="101" fill="#e2e8f0" font-size="13" font-weight="700">Patient #P-0447</text>
+  <text x="138" y="117" fill="#64748b" font-size="10">Male · 58 years</text>
+  <text x="138" y="132" fill="#64748b" font-size="10">Stage: CKD-3</text>
+
+  <!-- Risk badge -->
+  <rect x="138" y="138" width="72" height="18" rx="5" fill="#2d0a0a"/>
+  <text x="148" y="151" fill="#fca5a5" font-size="9" font-weight="700">HIGH RISK</text>
+
+  <!-- Divider -->
+  <rect x="60" y="162" width="200" height="1" fill="#1a1f3a"/>
+
+  <!-- Biomarkers -->
+  <text x="60" y="182" fill="#64748b" font-size="9" font-weight="600" letter-spacing="1">BIOMARKERS</text>
+
+  <text x="60" y="202" fill="#94a3b8" font-size="10">Creatinine</text>
+  <text x="175" y="202" fill="#ef4444" font-size="10" font-weight="600" text-anchor="end">3.2 mg/dL</text>
+  <text x="240" y="202" fill="#f87171" font-size="9" text-anchor="end">↑ High</text>
+
+  <text x="60" y="220" fill="#94a3b8" font-size="10">GFR</text>
+  <text x="175" y="220" fill="#f59e0b" font-size="10" font-weight="600" text-anchor="end">32 mL/min</text>
+  <text x="240" y="220" fill="#fcd34d" font-size="9" text-anchor="end">↓ Low</text>
+
+  <text x="60" y="238" fill="#94a3b8" font-size="10">Hemoglobin</text>
+  <text x="175" y="238" fill="#ef4444" font-size="10" font-weight="600" text-anchor="end">9.1 g/dL</text>
+  <text x="240" y="238" fill="#f87171" font-size="9" text-anchor="end">↓ Low</text>
+
+  <text x="60" y="256" fill="#94a3b8" font-size="10">Blood Pressure</text>
+  <text x="175" y="256" fill="#f59e0b" font-size="10" font-weight="600" text-anchor="end">148/92</text>
+  <text x="240" y="256" fill="#fcd34d" font-size="9" text-anchor="end">↑ High</text>
+
+  <text x="60" y="274" fill="#94a3b8" font-size="10">Potassium</text>
+  <text x="175" y="274" fill="#22c55e" font-size="10" font-weight="600" text-anchor="end">4.5 mEq/L</text>
+  <text x="240" y="274" fill="#86efac" font-size="9" text-anchor="end">Normal</text>
+
+  <text x="60" y="292" fill="#94a3b8" font-size="10">Albumin</text>
+  <text x="175" y="292" fill="#ef4444" font-size="10" font-weight="600" text-anchor="end">2.8 g/dL</text>
+  <text x="240" y="292" fill="#f87171" font-size="9" text-anchor="end">↓ Low</text>
+
+  <!-- Risk gauge panel -->
+  <rect x="296" y="40" width="230" height="130" rx="12" fill="#0a0c18" stroke="#1a1f3a" stroke-width="1"/>
+  <text x="316" y="66" fill="#94a3b8" font-size="10" font-weight="600" letter-spacing="1">RISK SCORE</text>
+
+  <!-- Circular risk dial -->
+  <circle cx="411" cy="108" r="48" fill="none" stroke="#1a1f3a" stroke-width="10"/>
+  <circle cx="411" cy="108" r="48" fill="none" stroke="url(#riskHigh)" stroke-width="10" 
+          stroke-dasharray="240 62" stroke-dashoffset="-16" stroke-linecap="round"/>
+  <text x="411" y="105" fill="#ef4444" font-size="22" font-weight="900" text-anchor="middle">78</text>
+  <text x="411" y="120" fill="#64748b" font-size="9" text-anchor="middle">/ 100</text>
+  <text x="411" y="148" fill="#fca5a5" font-size="10" text-anchor="middle" font-weight="600">HIGH RISK</text>
+
+  <!-- XGBoost confidence -->
+  <rect x="296" y="186" width="230" height="144" rx="12" fill="#0a0c18" stroke="#1a1f3a" stroke-width="1"/>
+  <text x="316" y="210" fill="#94a3b8" font-size="10" font-weight="600" letter-spacing="1">MODEL CONFIDENCE</text>
+
+  <text x="316" y="234" fill="#94a3b8" font-size="10">XGBoost</text>
+  <rect x="388" y="223" width="118" height="10" rx="5" fill="#1a1f3a"/>
+  <rect x="388" y="223" width="104" height="10" rx="5" fill="#ef4444" opacity="0.85"/>
+  <text x="512" y="233" fill="#f87171" font-size="10" font-weight="600">88.1%</text>
+
+  <text x="316" y="258" fill="#94a3b8" font-size="10">LightGBM</text>
+  <rect x="388" y="247" width="118" height="10" rx="5" fill="#1a1f3a"/>
+  <rect x="388" y="247" width="100" height="10" rx="5" fill="#f59e0b" opacity="0.8"/>
+  <text x="512" y="257" fill="#fcd34d" font-size="10" font-weight="600">84.7%</text>
+
+  <text x="316" y="282" fill="#94a3b8" font-size="10">Ensemble</text>
+  <rect x="388" y="271" width="118" height="10" rx="5" fill="#1a1f3a"/>
+  <rect x="388" y="271" width="110" height="10" rx="5" fill="#60a5fa" opacity="0.85"/>
+  <text x="512" y="281" fill="#93c5fd" font-size="10" font-weight="600">93.2%</text>
+
+  <!-- Divider -->
+  <rect x="316" y="295" width="190" height="1" fill="#1a1f3a"/>
+  <text x="316" y="312" fill="#475569" font-size="9">SHAP values · Interpretable predictions</text>
+  <text x="316" y="326" fill="#475569" font-size="9">25 clinical features · 158k patient records</text>
+
+  <!-- Trend chart panel -->
+  <rect x="542" y="40" width="218" height="290" rx="12" fill="#0a0c18" stroke="#1a1f3a" stroke-width="1"/>
+  <text x="562" y="66" fill="#94a3b8" font-size="10" font-weight="600" letter-spacing="0.5">CREATININE TREND</text>
+
+  <!-- Mini line chart -->
+  <g>
+    <line x1="562" y1="80" x2="562" y2="210" stroke="#1a1f3a" stroke-width="1"/>
+    <line x1="562" y1="210" x2="740" y2="210" stroke="#1a1f3a" stroke-width="1"/>
+    <!-- Y axis labels -->
+    <text x="558" y="90" fill="#475569" font-size="8" text-anchor="end">5</text>
+    <text x="558" y="120" fill="#475569" font-size="8" text-anchor="end">4</text>
+    <text x="558" y="150" fill="#475569" font-size="8" text-anchor="end">3</text>
+    <text x="558" y="180" fill="#475569" font-size="8" text-anchor="end">2</text>
+    <!-- Grid lines -->
+    <line x1="562" y1="90" x2="740" y2="90" stroke="#1a1f3a" stroke-width="0.5" stroke-dasharray="3,3"/>
+    <line x1="562" y1="120" x2="740" y2="120" stroke="#1a1f3a" stroke-width="0.5" stroke-dasharray="3,3"/>
+    <line x1="562" y1="150" x2="740" y2="150" stroke="#1a1f3a" stroke-width="0.5" stroke-dasharray="3,3"/>
+    <line x1="562" y1="180" x2="740" y2="180" stroke="#1a1f3a" stroke-width="0.5" stroke-dasharray="3,3"/>
+    <!-- Chart line (creatinine rising) -->
+    <polyline points="572,195 597,188 622,180 647,172 672,160 697,148 722,135 740,125"
+      fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Area fill -->
+    <polygon points="572,210 572,195 597,188 622,180 647,172 672,160 697,148 722,135 740,125 740,210"
+      fill="#ef4444" opacity="0.06"/>
+    <!-- Data points -->
+    <circle cx="572" cy="195" r="3" fill="#ef4444"/>
+    <circle cx="622" cy="180" r="3" fill="#ef4444"/>
+    <circle cx="672" cy="160" r="3" fill="#ef4444"/>
+    <circle cx="722" cy="135" r="3" fill="#ef4444"/>
+    <circle cx="740" cy="125" r="4" fill="#f87171" filter="url(#glow)"/>
+  </g>
+
+  <!-- X labels -->
+  <text x="572" y="220" fill="#475569" font-size="8" text-anchor="middle">Jan</text>
+  <text x="622" y="220" fill="#475569" font-size="8" text-anchor="middle">Mar</text>
+  <text x="672" y="220" fill="#475569" font-size="8" text-anchor="middle">May</text>
+  <text x="722" y="220" fill="#475569" font-size="8" text-anchor="middle">Jul</text>
+
+  <!-- GFR trend (declining) -->
+  <text x="562" y="248" fill="#94a3b8" font-size="10" font-weight="600">GFR TREND</text>
+  <polyline points="572,270 597,272 622,275 647,279 672,285 697,291 722,298 740,305"
+    fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-dasharray="5,3"/>
+  <text x="562" y="320" fill="#475569" font-size="9">GFR declining — nephrologist alert</text>
+
+  <!-- Bottom alerts panel -->
+  <rect x="40" y="346" width="720" height="106" rx="10" fill="#0a0c18" stroke="#1a1f3a" stroke-width="1"/>
+  <text x="60" y="370" fill="#e2e8f0" font-size="12" font-weight="700">Clinical Alerts</text>
+
+  <!-- Alert items -->
+  <rect x="60" y="378" width="210" height="44" rx="7" fill="#1a0a0a" stroke="#3b1111"/>
+  <circle cx="76" cy="400" r="5" fill="#ef4444"/>
+  <text x="88" y="396" fill="#fca5a5" font-size="10" font-weight="600">Creatinine Critical</text>
+  <text x="88" y="411" fill="#64748b" font-size="9">3.2 mg/dL — nephrology ref.</text>
+
+  <rect x="284" y="378" width="210" height="44" rx="7" fill="#1c1104" stroke="#3b2a0a"/>
+  <circle cx="300" cy="400" r="5" fill="#f59e0b"/>
+  <text x="312" y="396" fill="#fde68a" font-size="10" font-weight="600">BP Elevated</text>
+  <text x="312" y="411" fill="#64748b" font-size="9">148/92 mmHg — diet review</text>
+
+  <rect x="508" y="378" width="212" height="44" rx="7" fill="#0c1a20" stroke="#0e2d3a"/>
+  <circle cx="524" cy="400" r="5" fill="#38bdf8"/>
+  <text x="536" y="396" fill="#93c5fd" font-size="10" font-weight="600">GFR Trend Alert</text>
+  <text x="536" y="411" fill="#64748b" font-size="9">Progressive decline in 6 months</text>
+
+  <!-- Tech badges + title -->
+  <g>
+    <rect x="60" y="430" width="58" height="16" rx="4" fill="#0a0c18" stroke="#1a1f3a"/>
+    <text x="68" y="442" fill="#93c5fd" font-size="9">Python</text>
+    <rect x="126" y="430" width="66" height="16" rx="4" fill="#0a0c18" stroke="#1a1f3a"/>
+    <text x="133" y="442" fill="#93c5fd" font-size="9">XGBoost</text>
+    <rect x="200" y="430" width="66" height="16" rx="4" fill="#0a0c18" stroke="#1a1f3a"/>
+    <text x="207" y="442" fill="#93c5fd" font-size="9">LightGBM</text>
+    <rect x="274" y="430" width="74" height="16" rx="4" fill="#0a0c18" stroke="#1a1f3a"/>
+    <text x="279" y="442" fill="#93c5fd" font-size="9">Scikit-learn</text>
+  </g>
+  <text x="400" y="442" fill="#f1f5f9" font-size="16" font-weight="700">CKD Clinical Support System</text>
+</svg>

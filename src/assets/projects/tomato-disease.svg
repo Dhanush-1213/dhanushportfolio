@@ -1,0 +1,146 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#080e0a"/>
+      <stop offset="100%" stop-color="#0a1210"/>
+    </linearGradient>
+    <linearGradient id="confBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#4ade80"/>
+    </linearGradient>
+    <filter id="leafGlow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="scanGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)"/>
+  
+  <!-- Faint hex grid -->
+  <g opacity="0.04" stroke="#22c55e" stroke-width="0.5">
+    <line x1="0" y1="62" x2="800" y2="62"/><line x1="0" y1="124" x2="800" y2="124"/>
+    <line x1="0" y1="186" x2="800" y2="186"/><line x1="0" y1="248" x2="800" y2="248"/>
+    <line x1="0" y1="310" x2="800" y2="310"/><line x1="0" y1="372" x2="800" y2="372"/>
+    <line x1="0" y1="434" x2="800" y2="434"/>
+    <line x1="80" y1="0" x2="80" y2="500"/><line x1="160" y1="0" x2="160" y2="500"/>
+    <line x1="240" y1="0" x2="240" y2="500"/><line x1="320" y1="0" x2="320" y2="500"/>
+    <line x1="400" y1="0" x2="400" y2="500"/><line x1="480" y1="0" x2="480" y2="500"/>
+    <line x1="560" y1="0" x2="560" y2="500"/><line x1="640" y1="0" x2="640" y2="500"/>
+    <line x1="720" y1="0" x2="720" y2="500"/>
+  </g>
+
+  <!-- Leaf image panel -->
+  <rect x="40" y="40" width="280" height="300" rx="12" fill="#060e07" stroke="#0d3018" stroke-width="1.5"/>
+  
+  <!-- Simulated leaf shape -->
+  <ellipse cx="180" cy="190" rx="95" ry="120" fill="#0d2e10" opacity="0.9"/>
+  <ellipse cx="180" cy="190" rx="85" ry="110" fill="#0f3812" opacity="0.8"/>
+  <!-- Leaf veins -->
+  <line x1="180" y1="80" x2="180" y2="310" stroke="#1a5e1e" stroke-width="2.5" opacity="0.7"/>
+  <line x1="180" y1="140" x2="120" y2="170" stroke="#1a5e1e" stroke-width="1.2" opacity="0.5"/>
+  <line x1="180" y1="170" x2="115" y2="210" stroke="#1a5e1e" stroke-width="1.2" opacity="0.5"/>
+  <line x1="180" y1="200" x2="118" y2="245" stroke="#1a5e1e" stroke-width="1.2" opacity="0.5"/>
+  <line x1="180" y1="140" x2="240" y2="170" stroke="#1a5e1e" stroke-width="1.2" opacity="0.5"/>
+  <line x1="180" y1="170" x2="245" y2="210" stroke="#1a5e1e" stroke-width="1.2" opacity="0.5"/>
+  <line x1="180" y1="200" x2="242" y2="245" stroke="#1a5e1e" stroke-width="1.2" opacity="0.5"/>
+  
+  <!-- Disease spots -->
+  <circle cx="145" cy="155" r="12" fill="#854d0e" opacity="0.7"/>
+  <circle cx="145" cy="155" r="8" fill="#b45309" opacity="0.6"/>
+  <circle cx="215" cy="180" r="10" fill="#713f12" opacity="0.7"/>
+  <circle cx="215" cy="180" r="6" fill="#92400e" opacity="0.5"/>
+  <circle cx="160" cy="220" r="8" fill="#854d0e" opacity="0.6"/>
+  <circle cx="200" cy="240" r="9" fill="#92400e" opacity="0.5"/>
+
+  <!-- Scan overlay box -->
+  <rect x="120" y="130" width="120" height="120" rx="4" fill="none" stroke="#4ade80" stroke-width="1.5" stroke-dasharray="6,3" filter="url(#scanGlow)"/>
+  <!-- Corner brackets -->
+  <path d="M120 130 L120 145 M120 130 L135 130" stroke="#22c55e" stroke-width="2.5" fill="none"/>
+  <path d="M240 130 L240 145 M240 130 L225 130" stroke="#22c55e" stroke-width="2.5" fill="none"/>
+  <path d="M120 250 L120 235 M120 250 L135 250" stroke="#22c55e" stroke-width="2.5" fill="none"/>
+  <path d="M240 250 L240 235 M240 250 L225 250" stroke="#22c55e" stroke-width="2.5" fill="none"/>
+
+  <!-- Scan label -->
+  <rect x="120" y="112" width="120" height="18" rx="4" fill="#052e16"/>
+  <text x="155" y="124" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">CNN ANALYZING</text>
+
+  <!-- Panel label -->
+  <text x="60" y="62" fill="#4ade80" font-size="10" font-weight="700">Input Image</text>
+
+  <!-- Classification result panel -->
+  <rect x="340" y="40" width="420" height="130" rx="12" fill="#060e07" stroke="#0d3018" stroke-width="1.5"/>
+  <text x="360" y="70" fill="#94a3b8" font-size="10" font-weight="600" letter-spacing="1">CLASSIFICATION RESULT</text>
+  
+  <!-- Big label -->
+  <text x="360" y="115" fill="#f59e0b" font-size="32" font-weight="800">Powdery Mildew</text>
+  
+  <!-- Confidence -->
+  <text x="360" y="138" fill="#64748b" font-size="10">Confidence</text>
+  <rect x="440" y="127" width="200" height="10" rx="5" fill="#0d2010"/>
+  <rect x="440" y="127" width="184" height="10" rx="5" fill="#22c55e"/>
+  <text x="648" y="137" fill="#4ade80" font-size="11" font-weight="700">92.3%</text>
+
+  <!-- Top-3 predictions -->
+  <rect x="340" y="186" width="420" height="154" rx="12" fill="#060e07" stroke="#0d3018" stroke-width="1.5"/>
+  <text x="360" y="210" fill="#94a3b8" font-size="10" font-weight="600" letter-spacing="1">TOP-3 PREDICTIONS</text>
+
+  <!-- Prediction 1 -->
+  <text x="360" y="234" fill="#f59e0b" font-size="11" font-weight="600">Powdery Mildew</text>
+  <rect x="490" y="223" width="180" height="10" rx="5" fill="#0d2010"/>
+  <rect x="490" y="223" width="166" height="10" rx="5" fill="#f59e0b" opacity="0.85"/>
+  <text x="678" y="233" fill="#fde68a" font-size="10" font-weight="700">92.3%</text>
+
+  <!-- Prediction 2 -->
+  <text x="360" y="260" fill="#94a3b8" font-size="11">Early Blight</text>
+  <rect x="490" y="249" width="180" height="10" rx="5" fill="#0d2010"/>
+  <rect x="490" y="249" width="36" height="10" rx="5" fill="#64748b" opacity="0.7"/>
+  <text x="678" y="259" fill="#94a3b8" font-size="10">5.1%</text>
+
+  <!-- Prediction 3 -->
+  <text x="360" y="286" fill="#94a3b8" font-size="11">Late Blight</text>
+  <rect x="490" y="275" width="180" height="10" rx="5" fill="#0d2010"/>
+  <rect x="490" y="275" width="18" height="10" rx="5" fill="#475569" opacity="0.5"/>
+  <text x="678" y="285" fill="#475569" font-size="10">2.4%</text>
+
+  <!-- Divider -->
+  <rect x="360" y="295" width="380" height="1" fill="#0d3018"/>
+  <text x="360" y="314" fill="#64748b" font-size="9">Model: VGG16 · 38 disease classes · 87k training images</text>
+  <text x="360" y="330" fill="#64748b" font-size="9">Test Accuracy: 96.3% · Epochs: 25 · Batch Size: 32</text>
+
+  <!-- Remedy section -->
+  <rect x="40" y="356" width="720" height="96" rx="10" fill="#060e07" stroke="#0d3018" stroke-width="1"/>
+  <text x="60" y="380" fill="#e2e8f0" font-size="12" font-weight="700">Remedy Recommendation</text>
+
+  <!-- Remedy pills -->
+  <rect x="60" y="390" width="140" height="42" rx="8" fill="#0c2010" stroke="#0d3018"/>
+  <text x="80" y="407" fill="#4ade80" font-size="9" font-weight="700">CULTURAL</text>
+  <text x="80" y="422" fill="#64748b" font-size="9">Improve air circulation</text>
+
+  <rect x="212" y="390" width="140" height="42" rx="8" fill="#0c1a20" stroke="#0e2d3a"/>
+  <text x="232" y="407" fill="#38bdf8" font-size="9" font-weight="700">BIOLOGICAL</text>
+  <text x="232" y="422" fill="#64748b" font-size="9">Neem oil treatment</text>
+
+  <rect x="364" y="390" width="140" height="42" rx="8" fill="#1c1004" stroke="#2d1f06"/>
+  <text x="384" y="407" fill="#f59e0b" font-size="9" font-weight="700">CHEMICAL</text>
+  <text x="384" y="422" fill="#64748b" font-size="9">Sulfur-based fungicide</text>
+
+  <!-- Tech badges -->
+  <g>
+    <rect x="540" y="390" width="62" height="20" rx="5" fill="#080e0a" stroke="#0d3018"/>
+    <text x="550" y="404" fill="#4ade80" font-size="9" font-weight="600">Python</text>
+    <rect x="610" y="390" width="74" height="20" rx="5" fill="#080e0a" stroke="#0d3018"/>
+    <text x="618" y="404" fill="#4ade80" font-size="9" font-weight="600">TensorFlow</text>
+    <rect x="540" y="416" width="44" height="20" rx="5" fill="#080e0a" stroke="#0d3018"/>
+    <text x="550" y="430" fill="#4ade80" font-size="9" font-weight="600">CNN</text>
+    <rect x="592" y="416" width="100" height="20" rx="5" fill="#080e0a" stroke="#0d3018"/>
+    <text x="600" y="430" fill="#4ade80" font-size="9" font-weight="600">Computer Vision</text>
+  </g>
+
+  <!-- Title -->
+  <text x="60" y="344" fill="#f1f5f9" font-size="17" font-weight="700">Tomato Leaf Disease Detection</text>
+</svg>

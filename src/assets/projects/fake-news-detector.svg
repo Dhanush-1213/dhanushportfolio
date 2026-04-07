@@ -1,0 +1,171 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0c14"/>
+      <stop offset="100%" stop-color="#0d0f1e"/>
+    </linearGradient>
+    <linearGradient id="fakeBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </linearGradient>
+    <linearGradient id="realBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="redGlow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="greenGlow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)"/>
+  
+  <!-- Subtle grid -->
+  <g opacity="0.03" stroke="#a78bfa" stroke-width="0.5">
+    <line x1="0" y1="62" x2="800" y2="62"/><line x1="0" y1="124" x2="800" y2="124"/>
+    <line x1="0" y1="186" x2="800" y2="186"/><line x1="0" y1="248" x2="800" y2="248"/>
+    <line x1="0" y1="310" x2="800" y2="310"/><line x1="0" y1="372" x2="800" y2="372"/>
+    <line x1="0" y1="434" x2="800" y2="434"/>
+    <line x1="80" y1="0" x2="80" y2="500"/><line x1="160" y1="0" x2="160" y2="500"/>
+    <line x1="240" y1="0" x2="240" y2="500"/><line x1="320" y1="0" x2="320" y2="500"/>
+    <line x1="400" y1="0" x2="400" y2="500"/><line x1="480" y1="0" x2="480" y2="500"/>
+    <line x1="560" y1="0" x2="560" y2="500"/><line x1="640" y1="0" x2="640" y2="500"/>
+    <line x1="720" y1="0" x2="720" y2="500"/>
+  </g>
+
+  <!-- Input article panel -->
+  <rect x="40" y="40" width="340" height="280" rx="12" fill="#0b0d1a" stroke="#1e1b4b" stroke-width="1"/>
+  <rect x="40" y="40" width="340" height="40" rx="12" fill="#110e2e"/>
+  <rect x="40" y="68" width="340" height="12" fill="#110e2e"/>
+  <text x="60" y="66" fill="#a78bfa" font-size="11" font-weight="700">Article Input</text>
+
+  <!-- Fake article text lines -->
+  <text x="60" y="105" fill="#475569" font-size="9">BREAKING: Scientists reveal shocking discovery that...</text>
+  <text x="60" y="121" fill="#334155" font-size="9">Anonymous sources confirm government hiding evidence of</text>
+  <text x="60" y="137" fill="#334155" font-size="9">massive cover-up. Experts say this changes everything we</text>
+  <text x="60" y="153" fill="#334155" font-size="9">know about the situation. Viral claim spreading rapidly...</text>
+  
+  <!-- Highlighted suspicious phrases -->
+  <rect x="57" y="93" width="260" height="14" rx="3" fill="#ef4444" opacity="0.1"/>
+  <text x="60" y="105" fill="#fca5a5" font-size="9">BREAKING: Scientists reveal shocking discovery that...</text>
+  
+  <rect x="57" y="142" width="160" height="14" rx="3" fill="#f59e0b" opacity="0.1"/>
+  <text x="60" y="153" fill="#fcd34d" font-size="9">know about the situation. Viral claim...</text>
+
+  <!-- Word importance markers -->
+  <text x="60" y="180" fill="#64748b" font-size="9" font-weight="600" letter-spacing="0.5">KEY FEATURES DETECTED</text>
+  
+  <!-- TF-IDF score bars -->
+  <text x="60" y="200" fill="#94a3b8" font-size="9">"BREAKING"</text>
+  <rect x="140" y="190" width="120" height="8" rx="4" fill="#1e1b4b"/>
+  <rect x="140" y="190" width="108" height="8" rx="4" fill="#ef4444" opacity="0.8"/>
+  <text x="264" y="198" fill="#fca5a5" font-size="9">0.91</text>
+
+  <text x="60" y="218" fill="#94a3b8" font-size="9">"shocking"</text>
+  <rect x="140" y="208" width="120" height="8" rx="4" fill="#1e1b4b"/>
+  <rect x="140" y="208" width="96" height="8" rx="4" fill="#f59e0b" opacity="0.8"/>
+  <text x="264" y="216" fill="#fde68a" font-size="9">0.80</text>
+
+  <text x="60" y="236" fill="#94a3b8" font-size="9">"cover-up"</text>
+  <rect x="140" y="226" width="120" height="8" rx="4" fill="#1e1b4b"/>
+  <rect x="140" y="226" width="102" height="8" rx="4" fill="#ef4444" opacity="0.6"/>
+  <text x="264" y="234" fill="#fca5a5" font-size="9">0.85</text>
+
+  <text x="60" y="254" fill="#94a3b8" font-size="9">"anonymous"</text>
+  <rect x="140" y="244" width="120" height="8" rx="4" fill="#1e1b4b"/>
+  <rect x="140" y="244" width="72" height="8" rx="4" fill="#a78bfa" opacity="0.8"/>
+  <text x="264" y="252" fill="#c4b5fd" font-size="9">0.60</text>
+
+  <text x="60" y="272" fill="#94a3b8" font-size="9">"viral"</text>
+  <rect x="140" y="262" width="120" height="8" rx="4" fill="#1e1b4b"/>
+  <rect x="140" y="262" width="84" height="8" rx="4" fill="#ef4444" opacity="0.5"/>
+  <text x="264" y="270" fill="#fca5a5" font-size="9">0.70</text>
+
+  <!-- Divider line -->
+  <rect x="60" y="285" width="300" height="1" fill="#1e1b4b"/>
+  <text x="60" y="302" fill="#64748b" font-size="9">TF-IDF Vectorizer · 50k features · Logistic Regression</text>
+
+  <!-- Verdict panel - FAKE -->
+  <rect x="400" y="40" width="360" height="160" rx="12" fill="#140a0a" stroke="#3b0000" stroke-width="1.5"/>
+  <!-- Red glow effect -->
+  <circle cx="580" cy="120" r="60" fill="#ef4444" opacity="0.04" filter="url(#redGlow)"/>
+  
+  <text x="420" y="72" fill="#64748b" font-size="10" font-weight="600" letter-spacing="1">ANALYSIS RESULT</text>
+  
+  <!-- Big verdict -->
+  <text x="580" y="125" fill="#ef4444" font-size="48" font-weight="900" text-anchor="middle" opacity="0.15">FAKE</text>
+  <text x="580" y="122" fill="#ef4444" font-size="42" font-weight="900" text-anchor="middle">FAKE</text>
+
+  <!-- Confidence bar -->
+  <text x="420" y="148" fill="#64748b" font-size="9" font-weight="600">CONFIDENCE</text>
+  <rect x="420" y="152" width="220" height="10" rx="5" fill="#1e0f0f"/>
+  <rect x="420" y="152" width="205" height="10" rx="5" fill="url(#fakeBar)"/>
+  <text x="648" y="162" fill="#fca5a5" font-size="11" font-weight="700">93.2%</text>
+
+  <!-- Real news sample panel -->
+  <rect x="400" y="216" width="360" height="104" rx="12" fill="#060f0a" stroke="#052e16" stroke-width="1.5"/>
+  <circle cx="580" cy="268" r="50" fill="#22c55e" opacity="0.03" filter="url(#greenGlow)"/>
+
+  <text x="420" y="240" fill="#64748b" font-size="10" font-weight="600" letter-spacing="1">VERIFIED SAMPLE</text>
+  <text x="580" y="278" fill="#22c55e" font-size="36" font-weight="900" text-anchor="middle" opacity="0.12">REAL</text>
+  <text x="580" y="276" fill="#22c55e" font-size="32" font-weight="900" text-anchor="middle">REAL</text>
+
+  <text x="420" y="300" fill="#64748b" font-size="9" font-weight="600">CONFIDENCE</text>
+  <rect x="420" y="304" width="220" height="10" rx="5" fill="#0a1f0a"/>
+  <rect x="420" y="304" width="211" height="10" rx="5" fill="url(#realBar)"/>
+  <text x="648" y="314" fill="#86efac" font-size="11" font-weight="700">96.1%</text>
+
+  <!-- Model accuracy panel -->
+  <rect x="40" y="336" width="720" height="108" rx="10" fill="#0b0d1a" stroke="#1e1b4b" stroke-width="1"/>
+  <text x="60" y="360" fill="#e2e8f0" font-size="12" font-weight="700">Model Performance</text>
+
+  <!-- Accuracy gauge -->
+  <text x="60" y="390" fill="#64748b" font-size="10">Accuracy</text>
+  <rect x="120" y="380" width="140" height="10" rx="5" fill="#1e1b4b"/>
+  <rect x="120" y="380" width="138" height="10" rx="5" fill="#22c55e"/>
+  <text x="266" y="390" fill="#86efac" font-size="11" font-weight="700">98.46%</text>
+
+  <text x="60" y="415" fill="#64748b" font-size="10">Precision</text>
+  <rect x="120" y="405" width="140" height="10" rx="5" fill="#1e1b4b"/>
+  <rect x="120" y="405" width="135" height="10" rx="5" fill="#a78bfa"/>
+  <text x="266" y="415" fill="#c4b5fd" font-size="11" font-weight="700">97.1%</text>
+
+  <text x="60" y="435" fill="#64748b" font-size="10">Recall</text>
+  <rect x="120" y="425" width="140" height="10" rx="5" fill="#1e1b4b"/>
+  <rect x="120" y="425" width="136" height="10" rx="5" fill="#60a5fa"/>
+  <text x="266" y="435" fill="#93c5fd" font-size="11" font-weight="700">97.6%</text>
+
+  <!-- Confusion matrix mini -->
+  <text x="430" y="362" fill="#64748b" font-size="10" font-weight="600">CONFUSION MATRIX</text>
+  <rect x="430" y="368" width="44" height="30" rx="3" fill="#052e16"/>
+  <text x="452" y="388" fill="#22c55e" font-size="12" font-weight="700" text-anchor="middle">4821</text>
+  <rect x="480" y="368" width="44" height="30" rx="3" fill="#1e0f0f"/>
+  <text x="502" y="388" fill="#ef4444" font-size="12" font-weight="700" text-anchor="middle">79</text>
+  <rect x="430" y="404" width="44" height="30" rx="3" fill="#1e0f0f"/>
+  <text x="452" y="424" fill="#ef4444" font-size="12" font-weight="700" text-anchor="middle">94</text>
+  <rect x="480" y="404" width="44" height="30" rx="3" fill="#052e16"/>
+  <text x="502" y="424" fill="#22c55e" font-size="12" font-weight="700" text-anchor="middle">4903</text>
+
+  <!-- Tech badges -->
+  <g>
+    <rect x="560" y="371" width="50" height="22" rx="5" fill="#0f0d24" stroke="#1e1b4b"/>
+    <text x="570" y="386" fill="#c4b5fd" font-size="9" font-weight="600">Flask</text>
+    <rect x="618" y="371" width="52" height="22" rx="5" fill="#0f0d24" stroke="#1e1b4b"/>
+    <text x="628" y="386" fill="#c4b5fd" font-size="9" font-weight="600">React</text>
+    <rect x="678" y="371" width="52" height="22" rx="5" fill="#0f0d24" stroke="#1e1b4b"/>
+    <text x="683" y="386" fill="#c4b5fd" font-size="9" font-weight="600">TF-IDF</text>
+    <rect x="560" y="399" width="72" height="22" rx="5" fill="#0f0d24" stroke="#1e1b4b"/>
+    <text x="567" y="414" fill="#c4b5fd" font-size="9" font-weight="600">Scikit-learn</text>
+  </g>
+
+  <text x="560" y="435" fill="#f1f5f9" font-size="15" font-weight="700">Fake News Detector</text>
+</svg>
